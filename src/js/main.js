@@ -13,11 +13,6 @@ document.querySelector('#lang-select').addEventListener('change', () => {
 document.addEventListener('DOMContentLoaded', () => {
   threeCanvas();
   chartCanvas();
-  sliderProject();
+  // sliderProject();
 })
-
-// document.querySelector('#submit-btn').addEventListener('click', () => {
-//   checkForm();
-// })
-
 
