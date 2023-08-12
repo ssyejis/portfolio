@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./main.css">
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <script> Kakao.init('ee3fbf823bfdfe65fd02bfbd8300291f'); </script>
+</head>
+<body>
+  <canvas id="three-canvas"></canvas>
+  <div class="lang-select-container">
+    <div class="lang-select-content">
+      <div class="lang-icon"><img src="./images/lang-icon.png" alt="langIcon"></div>
+      <select id="lang-select" class="lang-select" title="language">
+        <a href="javascript:void(0);"><option value="ko">KO</option></a>
+        <a href="javascript:void(0);"><option value="en">EN</option></a>
+      </select>
+    </div>
+  </div>
+  <section class="section home">
+    <home-intro></home-intro>
+  </section>
+  <section class="section detail">
+    <div class="detail__content detail-content profil">
+      <profil-content></profil-content>
+    </div>
+    <div class="detail__content detail-content skill">
+      <skill-content></skill-content>
+    </div>
+    <!-- <div class="detail__content detail-content project">
+      <div class="project-header detail-content__header">
+        <h1 class="font-white bit detail-title">프로젝트</h1>
+        <button class="project-close detail-close font-white bit">➜</button>
+      </div>
+      <div class="detail-content__body">
+        <div class="project-content">
+          <div class="project-content__item project-item">
+            <div class="project-item__img"><img src="./images//project1.png" alt=""></div>
+            <span class="font-white bit">여수시 OK통합예약</span>
+          </div>
+          <div class="project-content__item">
+            <div class="project-item__img"><img src="./images//project1.png" alt=""></div>
+            <span class="font-white bit">여수시 OK통합예약</span>
+          </div>
+          <div class="project-content__item">
+            <div class="project-item__img"><img src="./images//project1.png" alt=""></div>
+            <span class="font-white bit">여수시 OK통합예약</span>
+          </div>
+          <div class="project-content__item">
+            <div class="project-item__img"><img src="./images//project1.png" alt=""></div>
+            <span class="font-white bit">여수시 OK통합예약</span>
+          </div>
+          <div class="project-content__item">
+            <div class="project-item__img"><img src="./images//project1.png" alt=""></div>
+            <span class="font-white bit">여수시 OK통합예약</span>
+          </div>
+          <div class="project-content__item">
+            <div class="project-item__img"><img src="./images//project1.png" alt=""></div>
+            <span class="font-white bit">여수시 OK통합예약</span>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="detail__content detail-content contact">
+      <contact-content></contact-content>
+      <!-- <form
+        class="contact-form gform"
+        id="contact-form"
+        action="https://script.google.com/macros/s/AKfycbx8hy8W5Bzh5uareHiGsyLToaHhB58lP90EIVkwn43bibfnC4NTTD1PHkX8cVBF0yLt/exec"
+        target="frAttachFiles"
+        onsubmit="sendForm()">
+        <div>
+          <label for="name">이름</label>
+          <input type="text" name="name" id="name" onkeyup="checkForm('name')">
+          <p class="display--none">※이름을 작성해주세요</p>
+        </div>
+        <div>
+          <label for="email">이메일</label>
+          <input type="email" name="email" id="email" onkeyup="checkForm('email')">
+          <p class="display--none">※이메일을 작성해주세요</p>
+          <p class="display--none">※이메일 형식에 맞게 작성해주세요.</p>
+        </div>
+        <div>
+          <label for="message">메세지</label>
+          <textarea name="message" id="message" onkeyup="checkForm('message')"></textarea>
+          <p class="display--none">※메세지를 작성해주세요</p>
+        </div>
+        <button id="submit-btn">보내기</button>
+      </form>
+      <iframe name="frAttachFiles" style="display: none;"></iframe> -->
+    </div>
+    <div class="detail__content detail-content project">
+      <div class="project-header detail-content__header">
+        <h1 class="font-white bit detail-title">여수시청OK통합예약</h1>
+        <button class="project-close detail-close font-white bit">x</button>
+      </div>
+      <div class="project__wrap">
+        <div class="project__img">
+          <div class="project__list">
+            <div class="project__item"><img src="./images/project1.png" alt=""></div>
+            <div class="project__item"><img src="./images/project2.png" alt=""></div>
+            <div class="project__item"><img src="./images/project3.png" alt=""></div>
+            <div class="project__item"><img src="./images/project4.png" alt=""></div>
+            <div class="project__item"><img src="./images/project5.png" alt=""></div>
+          </div>
+        </div>
+        <div class="project__btn">
+          <a href="#" class="prev">prev</a>
+          <a href="#" class="next">next</a>
+        </div>
+        <div class="dot__wrap"></div>
+      </div>
+    </div>
+  </section>
+  <script type="module" src="./components/HomeIntro.js"></script>
+  <script type="module" src="./components/ProfilContent.js"></script>
+  <script type="module" src="./components/SkillContent.js"></script>
+  <script type="module" src="./components/ContactContent.js"></script>
+  <script type="text/javascript" src="./js/form.js"></script>
+</body>
+</html>
