@@ -36,7 +36,7 @@ export default class ContactContent extends HTMLElement {
         <p class="display--none bit">※ ${t(lang,'messageVali')}</p>
       </div>
       <div class="contact-form__social contact-social">
-        <a target="_blank" href="http://qr.kakao.com/talk/TisHJujFcDVTgVWHOPAK5sgR3KQ-" class="contact-social__item"><img src="./images/kakao-icon.png" alt="kakao icon img"></a>
+      <!--<a target="_blank" href="http://qr.kakao.com/talk/TisHJujFcDVTgVWHOPAK5sgR3KQ-" class="contact-social__item"><img src="./images/kakao-icon.png" alt="kakao icon img"></a> -->
         <a target="_blank" class="contact-social__item"><img src="./images/github-icon.png" alt="github icon img"></a>
         <a href="mailto:antpuella@gmail.com" class="contact-social__item"><img src="./images/email-icon.png" alt="email icon img"></a>
         <button id="submit-btn" class="contact-form__btn bit">${t(lang,'send')}</button>

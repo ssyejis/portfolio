@@ -72,8 +72,8 @@ function sendForm() {
   }
 }
 
-function openKakao() {
-  Kakao.Channel.addChannel({
-    channelPublicId: '_ZeUTxl',
-  });
-}
+// function openKakao() {
+//   Kakao.Channel.addChannel({
+//     channelPublicId: '_ZeUTxl',
+//   });
+// }
