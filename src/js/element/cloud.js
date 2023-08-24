@@ -21,7 +21,7 @@ export class Cloud {
 
     this.gltfLoader = info.gltfLoader;
     info.gltfLoader.load(
-      '/models/cloud.glb',
+      '././models/cloud.glb',
       glb => {
         this.mesh = glb.scene.children[0];
         this.mesh.scale.set(this.scale, this.scale, this.scale);

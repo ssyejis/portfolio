@@ -19,7 +19,7 @@ export class Floor {
     this.rotationZ = info.positionZ || 0;
 
     const textureLoader = new TextureLoader();
-    const floorTexture = textureLoader.load('/images/grid.png');
+    const floorTexture = textureLoader.load('././images/grid.png');
     floorTexture.wrapS = RepeatWrapping;
     floorTexture.wrapT = RepeatWrapping;
     floorTexture.repeat.x = 10;

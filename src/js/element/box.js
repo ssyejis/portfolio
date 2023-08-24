@@ -34,7 +34,7 @@ export class Box {
 
     if (this.type === 'skillBox') {
       const textureLoader = new TextureLoader();
-      const boxTexture = textureLoader.load(`/images/${info.url}.png`);
+      const boxTexture = textureLoader.load(`././images/${info.url}.png`);
       boxTexture.magFilter = NearestFilter;
       boxTexture.minFilter = LinearMipMapLinearFilter;
       boxTexture.encoding = sRGBEncoding;

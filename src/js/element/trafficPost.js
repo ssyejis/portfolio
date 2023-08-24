@@ -24,7 +24,7 @@ export class TrafficPost {
 
     this.gltfLoader = info.gltfLoader;
     info.gltfLoader.load(
-      `/models/${info.url}`,
+      `././models/${info.url}`,
       glb => {
         this.mesh = glb.scene.children[0];
         this.mesh.scale.set(this.scaleX, this.scaleY, this.scaleZ);

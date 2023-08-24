@@ -330,7 +330,7 @@ export const element = {
     positionX: -1,
     positionY: 2,
     positionZ: -6.2,
-    loader: '/models/bird.glb',
+    loader: '././models/bird.glb',
     gltfLoader: preset.gltfLoader,
   }),
 }
