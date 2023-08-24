@@ -20,7 +20,7 @@ export class Project {
     this.rotationZ = info.rotationZ || 0;
 
     const textureLoader = new TextureLoader();
-    const texture = textureLoader.load(`${`././images/${info.url}.png`}`);
+    const texture = textureLoader.load(`././images/${info.url}.png`);
     texture.encoding =sRGBEncoding;
 
     this.geometry = new PlaneGeometry(6.2,4);

@@ -153,7 +153,7 @@ export const element = {
     positionX: 21.5,
     positionY: 5.4,
     positionZ: 4.5,
-    loader: '/models/projectHome.glb',
+    loader: '././models/projectHome.glb',
     scene: preset.scene,
     gltfLoader: preset.gltfLoader,
     enter: false,
@@ -161,7 +161,7 @@ export const element = {
   projectList: [
     new Project({
       name: 'projectItem',
-      url: `project1`,
+      url: 'project1',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
       projectName: '여수시OK통합예약홈페이지',
@@ -173,7 +173,7 @@ export const element = {
     
     new Project({
       name: 'projectItem',
-      url: `project2`,
+      url: 'project2',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
       projectName: '여수시OK통합예약홈페이지',
@@ -185,7 +185,7 @@ export const element = {
     
     new Project({
       name: 'projectItem',
-      url: `project3`,
+      url: 'project3',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
       projectName: '여수시OK통합예약홈페이지',
@@ -197,7 +197,7 @@ export const element = {
     
     new Project({
       name: 'projectItem',
-      url: `project4`,
+      url: 'project4',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
       projectName: '여수시OK통합예약홈페이지',
@@ -209,7 +209,7 @@ export const element = {
     
     new Project({
       name: 'projectItem',
-      url: `project5`,
+      url: 'project5',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
       projectName: '여수시OK통합예약홈페이지',
@@ -221,7 +221,7 @@ export const element = {
     
     new Project({
       name: 'projectItem',
-      url: `project6`,
+      url: 'project6',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
       projectName: '여수시OK통합예약홈페이지',
@@ -234,7 +234,7 @@ export const element = {
   trafficLight: new TrafficPost({
     scene: preset.scene,
     gltfLoader: preset.gltfLoader,
-    url: 'trafficLight.glb',
+    url: '././models/trafficLight.glb',
     scaleX: 0.4,
     scaleY: 0.6,
     scaleZ: 0.4,
@@ -246,7 +246,7 @@ export const element = {
   post: new TrafficPost({
     scene: preset.scene,
     gltfLoader: preset.gltfLoader,
-    url: 'post.glb',
+    url: '././models/post.glb',
     scaleX: 0.6,
     scaleY: 0.4,
     scaleZ: 0.4,
