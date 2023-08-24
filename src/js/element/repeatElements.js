@@ -44,7 +44,7 @@ export const element = {
     scale: 0.35,
     positionZ: 17, 
     positionY: 0.7,
-    loader: '/models/model.glb',
+    loader: '././models/model.glb',
     updown: false,
   }),
   profilSpot: new Spot({
