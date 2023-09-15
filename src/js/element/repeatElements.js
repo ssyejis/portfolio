@@ -161,6 +161,7 @@ export const element = {
   projectList: [
     new Project({
       name: 'projectItem',
+      num: 1,
       url: 'project1',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
@@ -169,10 +170,12 @@ export const element = {
       positionY: 7.5,
       positionZ: 5,
       rotationX: -Math.PI/8,
+      open: false,
     }),
     
     new Project({
       name: 'projectItem',
+      num: 2,
       url: 'project2',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
@@ -185,6 +188,7 @@ export const element = {
     
     new Project({
       name: 'projectItem',
+      num: 3,
       url: 'project3',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
@@ -197,6 +201,7 @@ export const element = {
     
     new Project({
       name: 'projectItem',
+      num: 4,
       url: 'project4',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
@@ -209,6 +214,7 @@ export const element = {
     
     new Project({
       name: 'projectItem',
+      num: 5,
       url: 'project5',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
@@ -221,6 +227,7 @@ export const element = {
     
     new Project({
       name: 'projectItem',
+      num: 6,
       url: 'project6',
       scene: preset.scene,
       fontLoader: preset.fontLoader,
@@ -333,6 +340,21 @@ export const element = {
     loader: '././models/bird.glb',
     gltfLoader: preset.gltfLoader,
   }),
+  directMove: new Font({
+    scene: preset.scene,
+    fontLoader: preset.fontLoader,
+    fontUrl: './font/DNF Bit Bit TTF_Regular.json',
+    text: `${t(lang._contry,'direction')}`,
+    color1: '#83a0ce',
+    color2: '#5b78a8',
+    size: 0.2,
+    height: 0.1,
+    addScene: true,
+    rotationX: -Math.PI/5,
+    positionX: 0,
+    positionY: 0.3,
+    positionZ: 18,
+  }),
 }
 
 export function repeatElement() {
@@ -395,11 +417,12 @@ export function repeatElement() {
     scene: preset.scene,
     fontLoader: preset.fontLoader,
     fontUrl: './font/DNF Bit Bit TTF_Regular.json',
-    text: '↓ click !!',
+    text: `${t(lang._contry,'click')}`,
     color1: '#83a0ce',
     color2: '#5b78a8',
     size: 1,
     height: 1,
+    addScene: true,
     positionY: 36,
   });
 
@@ -412,6 +435,7 @@ export function repeatElement() {
     color2: '#5b78a8',
     size: 0.5,
     height: 0.3,
+    addScene: true,
     rotationX: -Math.PI/10,
     positionX: -5,
     positionY: 0.3,
@@ -427,6 +451,7 @@ export function repeatElement() {
     color2: '#5b78a8',
     size: 0.5,
     height: 0.3,
+    addScene: true,
     rotationX: -Math.PI/10,
     positionX: 3,
     positionY: 0.3,
@@ -442,26 +467,11 @@ export function repeatElement() {
     color2: '#5b78a8',
     size: 0.5,
     height: 0.3,
+    addScene: true,
     rotationX: -Math.PI/10,
     positionX: -3,
     positionY: 0.3,
     positionZ: 7.5,
-  });
-
-  new Font({
-    scene: preset.scene,
-    fontLoader: preset.fontLoader,
-    fontUrl: './font/DNF Bit Bit TTF_Regular.json',
-    text: `EXIT→`,
-    color1: '#83a0ce',
-    color2: '#5b78a8',
-    size: 0.8,
-    height: 0.3,
-    addScene: false,
-    rotationX: -Math.PI/10,
-    positionX: 0,
-    positionY: 6,
-    positionZ: 5,
   });
 
   new Floor({

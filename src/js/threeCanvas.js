@@ -4,11 +4,9 @@ import * as body from './bodyElement';
 import { preset, element, repeatElement } from './element/repeatElements';
 
 export default function threeCanvas() {
-
     const home =  document.querySelector('.home');
     const profil = document.querySelector('.profil');
     const skill = document.querySelector('.skill');
-    const project = document.querySelector('.project');
     const contact = document.querySelector('.contact');
 
     const closeBtn = document.querySelectorAll('.detail-close');
@@ -28,7 +26,7 @@ export default function threeCanvas() {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 100);
     camera.position.set(0, 0, 15);
 
-    const spotes = [[element.profilSpot, profil], [element.skillSpot, skill], [element.projectSpot], [element.postSpot, contact], [element.trafficSpot]];
+    const spotes = [[element.profilSpot, profil], [element.skillSpot, skill], [element.projectSpot, null], [element.postSpot, contact], [element.trafficSpot, null]];
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.x = 1;
     light.position.z = 2;
@@ -45,9 +43,14 @@ export default function threeCanvas() {
     // Raycaster
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
+
     let destinationPoint = new THREE.Vector3();
     let angle = 0;
     let isPressed = false;
+    let transitionMoving = false;
+
+    let popWidth = 1500;
+    let popHeight = 790
   
     function draw() {
       const delta = clock.getDelta();
@@ -70,6 +73,7 @@ export default function threeCanvas() {
   
         if (element.modelMesh2.moving) {
           camera.zoom = 1;
+          preset.scene.remove(element.directMove.mesh);
           angle = Math.atan2(
             destinationPoint.z - element.modelMesh2.mesh.position.z,
             destinationPoint.x - element.modelMesh2.mesh.position.x,
@@ -95,8 +99,7 @@ export default function threeCanvas() {
                 if (
                   Math.abs(e[0].mesh.position.x - element.modelMesh2.mesh.position.x) < 0.35 &&
                   Math.abs(e[0].mesh.position.z - element.modelMesh2.mesh.position.z) < 0.35 &&
-                  !e[0].enter &&
-                  !isPressed
+                  !e[0].enter
                 ) {
                   enterSpot(i);
                 } else if (
@@ -110,8 +113,7 @@ export default function threeCanvas() {
                 if (
                   Math.abs(e[0].mesh.position.x - element.modelMesh2.mesh.position.x) < 2 &&
                   Math.abs(e[0].mesh.position.z - element.modelMesh2.mesh.position.z) < 0.5 &&
-                  !e[0].enter &&
-                  !isPressed
+                  !e[0].enter
                 ) {
                   enterSpot(i);
                 } else if (
@@ -127,6 +129,7 @@ export default function threeCanvas() {
       }
       renderer.render(preset.scene, camera);
       camera.updateProjectionMatrix();
+      // window.requestAnimationFrame(draw);
       renderer.setAnimationLoop(draw);
     }
 
@@ -140,7 +143,7 @@ export default function threeCanvas() {
           zoom: 1.5,
         }
       )
-      if (spotes[i][1]) {
+      if (spotes[i][1] && i !== 2) {
         gsap.to(
           spotes[i][1],
           {
@@ -231,9 +234,10 @@ export default function threeCanvas() {
       } else if (i === 2) {
         if (sceneType === 2) {
           preset.scene.add(element.projectHome.mesh);
+          preset.scene.add(element.directMove);
           element.projectList.forEach((i) => { preset.scene.add(i.mesh, i.font.mesh); })
           sceneType = 3;
-          element.modelMesh2.updown = true;
+          transitionMoving = true;
           gsap.to(
             element.modelMesh2.mesh.position,
             {
@@ -258,10 +262,10 @@ export default function threeCanvas() {
               y: 5.7,
             }
           )
-          setTimeout(() => { element.modelMesh2.updown = false; console.log(camera.position) },3000)
+          setTimeout(() => { transitionMoving = false; },3000)
         } else if (sceneType === 3) {
           sceneType = 2;
-          element.modelMesh2.updown = true;
+          transitionMoving = true;
           gsap.to(
             element.modelMesh2.mesh.position,
             {
@@ -289,7 +293,7 @@ export default function threeCanvas() {
               x: -3
             }
           )
-          setTimeout(() => { element.modelMesh2.updown = false; },4500)
+          setTimeout(() => { transitionMoving = false; },4500)
         }
       } else if (i === 3) {
         if (spotes[4][0].enter) {
@@ -377,15 +381,15 @@ export default function threeCanvas() {
             y: 4.5
           }
         )
-      }
-      if (spotes[i][1]) {
-        gsap.to(
-          spotes[i][1],
-          {
-            duration: 0.5,
-            css: { right: '-100%', display: 'none' }
-          }
-        )
+        if (spotes[i][1]) {
+          gsap.to(
+            spotes[i][1],
+            {
+              duration: 0.5,
+              css: { right: '-100%', display: 'none' }
+            }
+          )
+        }
       }
       if(i === 0) {
         element.modelMesh2.mesh.position.y = 0.7;
@@ -420,7 +424,7 @@ export default function threeCanvas() {
           gsap.to(
             element.projectSpot.mesh.position,
             {
-              duration: 2,
+              duration: 1,
               x: 46,
             }
           )
@@ -429,9 +433,12 @@ export default function threeCanvas() {
     }
 
     closeBtn.forEach((item, i) => {
+      let num;
+      if (i === 2) num = 3;
+      else num = i;
       item.addEventListener('click', () => {
         gsap.to(
-          spotes[i][1],
+          spotes[num][1],
           {
             duration: 0.5,
             css: { right: `${-100}%`, display: 'none' }
@@ -451,12 +458,13 @@ export default function threeCanvas() {
     }
   
     function transitionScene() {
+      transitionMoving = true;
       camera.lookAt(0, -1, 0);
       home.classList.add('display--none');
       gsap.to(
         camera.position,
         {
-          duration: 2,
+          duration: 1,
           y: 70,
           z: 0,
         }
@@ -477,6 +485,9 @@ export default function threeCanvas() {
       }, 1800);
       setTimeout(() => {
         sceneType = 2;
+      }, 2600);
+      setTimeout(() => {
+        transitionMoving = false;
       }, 3000);
     }
   
@@ -490,21 +501,25 @@ export default function threeCanvas() {
     }
 
     function openProject(item) {
-      isPressed = false;
-      // const uri = 'http://localhost:8080/project.html';
-      // const res = encodeURI(uri);
-      window.open('http://localhost:8080/project.html');
+      const popupX = (document.body.offsetWidth / 2) - (popWidth / 2);
+      const popupY= (window.screen.height / 2) - (popHeight / 2);
+      if(typeof(window.open) === 'function') window.open(`/project.html?num=${item.num}`, '_blank"', `width=${popWidth},height=${popHeight}, left=${popupX}, top=${popupY}`);
+      else window.location.href = `/project.html?num=${item.num}`, '_blank"', `width=${popWidth},height=${popHeight}, left=${popupX}, top=${popupY}`;
+      
     }
   
     function checkIntersects() {
-      if (sceneType === 1)raycaster.setFromCamera(mouse, camera);
+      if (transitionMoving) return;
+      if (sceneType === 1) {
+        raycaster.setFromCamera(mouse, camera);
+        transitionScene();
+      }
       const intersects = raycaster.intersectObjects(preset.scene.children);
       for (const item of intersects) {
-        if (sceneType === 1) transitionScene();
-        if ((item.object.name.indexOf('floor') >= 0 || item.object.name.indexOf('spot') >= 0 || item.object.name.indexOf('box') >= 0) && sceneType === 2 && !element.modelMesh2.updown ) {
+        if ((item.object.name.indexOf('floor') >= 0 || item.object.name.indexOf('spot') >= 0 || item.object.name.indexOf('box') >= 0) && sceneType === 2 ) {
           moveModel(item);
         }
-        if ((item.object.name.indexOf('projectHome') >= 0 || item.object.name.indexOf('spot') >= 0) && sceneType === 3 && !element.modelMesh2.updown) moveModel(item);
+        if ((item.object.name.indexOf('projectHome') >= 0 || item.object.name.indexOf('spot') >= 0) && sceneType === 3) moveModel(item);
         break;
       }
     }
@@ -513,6 +528,9 @@ export default function threeCanvas() {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
+
+      if(document.body.offsetWidth < 1500) popWidth = document.body.offsetWidth;
+      if(window.screen.height < 800) popHeight = window.screen.height;
     }
   
     window.addEventListener('resize', setSize);

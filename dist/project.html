@@ -1,1 +1,10 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="width=device-width, initial-scale=1.0"><title>Document</title><link rel="stylesheet" href="./main.css"></head><body><h1>준비중</h1></body></html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="width=device-width, initial-scale=1.0"><title>Yeji's portfolio</title></head><body></body><script>var num = new URLSearchParams(window.location.search).get("num");
+  if (num) {
+    innerText = `<div class="project-detail"><img src="./images/project${num}_detail.png" alt=""></div>`;
+    document.body.innerHTML = innerText;
+  }</script></html><style>body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+  .project-detail { width: 100%; }
+  .project-detail img { width: 100%; }</style>

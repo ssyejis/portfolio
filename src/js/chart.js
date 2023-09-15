@@ -5,7 +5,7 @@ export default function chartCanvas() {
   new Chart(document.getElementById('personal-chart'), {
     type: 'radar',
     data: {
-      labels: ['Africa', 'Asia', 'Europe', 'Latin America', 'North America'],
+      labels: ['I', 'N', 'F', 'P', 'E', 'S', 'T', 'J'],
       borderColor: '#fff',
       datasets: [
         {
@@ -16,13 +16,15 @@ export default function chartCanvas() {
           pointBorderColor: 'rgba(12, 35, 63)',
           pointBackgroundColor: 'rgba(12, 35, 63)',
           borderWidth: 3,
-          data: [8.77,55.61,21.69,6.62,6.82]
+          data: [7, 3, 6, 3, 3, 7, 4, 7]
         }
       ]
     },
     options: {
       scales: {
         r: {
+          max: 10,
+          min: 0,
           grid: {
             color: '#bfccf0',
             lineWidth: 3,
@@ -31,6 +33,7 @@ export default function chartCanvas() {
             font: {
               size: 18
             },
+            stepSize: 1,
             backgroundColor: 'rgba(12, 35, 63, 0),'
           },
           pointLabels: {

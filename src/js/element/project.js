@@ -29,7 +29,8 @@ export class Project {
     this.mesh.position.set(this.positionX, this.positionY, this.positionZ);
     this.mesh.rotation.set (this.rotationX, this.rotationY, this.rotationZ);
     this.mesh.name = info.name || '';
-    // this.scene.add(this.mesh)
+
+    this.mesh.num = info.num || 0;
 
     this.font = new Font({
       scene: this.scene,

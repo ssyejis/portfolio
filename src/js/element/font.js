@@ -20,7 +20,7 @@ export class Font {
     this.rotationY = info.rotationY || 0;
     this.rotationZ = info.rotationZ || 0;
 
-    this.addScene = info.addScene || true;
+    this.addScene = info.addScene || false;
 
     this.fontLoader.load(
       info.fontUrl,

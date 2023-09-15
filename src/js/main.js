@@ -1,7 +1,6 @@
 import { lang, setCookie, getCookie, t, i18n } from "./i18n";
 import threeCanvas from "./threeCanvas";
 import chartCanvas from "./chart";
-import sliderProject from "./sliderProject";
 
 document.querySelector('#lang-select').value = getCookie('lang');
 document.querySelector('#lang-select').addEventListener('change', () => {
@@ -13,6 +12,5 @@ document.querySelector('#lang-select').addEventListener('change', () => {
 document.addEventListener('DOMContentLoaded', () => {
   threeCanvas();
   chartCanvas();
-  // sliderProject();
 })
 

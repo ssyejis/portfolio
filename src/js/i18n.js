@@ -1,6 +1,7 @@
 export const i18n = {
   en: {
-    'title': 'Hi, I am walking developer.',
+    'title': 'Hi, I am walking developer yeji seo.',
+    'click': '↓ click !!',
     'profil': 'profil',
     'skill': 'skill',
     'project': 'project',
@@ -22,9 +23,11 @@ export const i18n = {
     'emailRegVali': 'Please enter a valid email address.',
     'messageVali': 'Please enter your message.',
     'send': 'send',
+    'direction': 'Please use the mouse to move!',
   },
   ko: {
     'title' : '안녕하세요, 전진하는 개발자 서예지입니다.',
+    'click': '↓  클릭!!',
     'profil': '프로필',
     'skill': '스킬',
     'project': '프로젝트',
@@ -49,6 +52,7 @@ export const i18n = {
     'emailRegVali': '이메일 형식에 맞게 작성해주세요.',
     'messageVali': '메세지를 작성해주세요.',
     'send': '보내기',
+    'direction': '마우스를 이용해 이동해주세요!',
   }
 }
 
