@@ -35,7 +35,7 @@ export const element = {
     gltfLoader: preset.gltfLoader,
     scale: 1.5,
     rotationY: Math.PI/2,
-    loader: '././models/model.glb',
+    loader: './models/model.glb',
   }),
   modelMesh2: new Model({
     name: 'model2',
@@ -44,7 +44,7 @@ export const element = {
     scale: 0.35,
     positionZ: 17, 
     positionY: 0.7,
-    loader: '././models/model.glb',
+    loader: './models/model.glb',
     updown: false,
   }),
   profilSpot: new Spot({
