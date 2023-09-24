@@ -367,7 +367,7 @@ export const element = {
     positionY: 0.3,
     positionZ: 18,
   }),
-  EXIT: new Font({
+  exit: new Font({
     scene: preset.scene,
     fontLoader: preset.fontLoader,
     fontUrl: './font/DNF Bit Bit TTF_Regular.json',
@@ -376,7 +376,7 @@ export const element = {
     color2: '#172540',
     size: 0.6,
     height: 0.1,
-    addScene: true,
+    addScene: false,
     rotationX: -Math.PI/8,
     positionX: 1,
     positionY: 7.5,

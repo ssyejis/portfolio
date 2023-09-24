@@ -235,6 +235,7 @@ export default function threeCanvas() {
         if (sceneType === 2) {
           preset.scene.add(element.projectHome.mesh);
           preset.scene.add(element.directMove.mesh);
+          preset.scene.add(element.exit.mesh);
           element.projectList.forEach((i) => { preset.scene.add(i.mesh, i.font.mesh); })
           sceneType = 3;
           transitionMoving = true;
