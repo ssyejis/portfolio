@@ -52,9 +52,14 @@ export default function chartCanvas() {
       plugins: {
         legend: {
           labels: {
-            font: {
-              size: 30,
-              family: 'BitBit'
+            font: function (context) {
+              const width = context.chart.width
+              const size = Math.round(width / 16)
+
+              return {
+                size,
+                family: 'BitBit'
+              }
             },
             color: '#bfccf0'
           }

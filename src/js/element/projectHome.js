@@ -8,7 +8,6 @@ import { Project } from './project';
 export class ProjectHome {
   constructor(info) {
     this.scene = info.scene;
-    // this.scale = info.scale || 0.3;
     this.loader = info.loader || 0.3;
 
     this.positionX = info.positionX || 0;
@@ -29,11 +28,9 @@ export class ProjectHome {
           }
         });
         this.mesh = glb.scene.children[0];
-        // this.mesh.scale.set(this.scale, this.scale, this.scale);
         this.mesh.position.set(this.positionX, this.positionY, this.positionZ);
         this.mesh.rotation.set (this.rotationX, this.rotationY, this.rotationZ);
         this.mesh.name = info.name || '';
-        // this.scene.add(this.mesh);
       }
     )
   }

@@ -1,6 +1,10 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="width=device-width, initial-scale=1.0"><title>Yeji's portfolio</title></head><body></body><script>var num = new URLSearchParams(window.location.search).get("num");
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="width=device-width, initial-scale=1.0"><title>Yeji's portfolio</title><script src="./js/main.js"></script><link rel="icon" href="./favicon.ico" type="image/x-icon" sizes="16x16"><link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" sizes="16x16"></head><body></body><script>function getCookie(key) {
+    let value = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return value? value[2] : 'ko';
+  }
+  var num = new URLSearchParams(window.location.search).get("num");
   if (num) {
-    innerText = `<div class="project-detail"><img src="./images/project${num}_detail.png" alt=""></div>`;
+    innerText = (getCookie('lang') === 'ko') ? `<div class="project-detail"><img src="./images/project${num}_detail.png" alt=""></div>` : `<div class="project-detail"><img src="./images/project${num}_detail_en.png" alt=""></div>` ;
     document.body.innerHTML = innerText;
   }</script></html><style>body {
     margin: 0;

@@ -93,43 +93,43 @@ export default function threeCanvas() {
           ) {
             element.modelMesh2.moving = false;
           }
-
-            spotes.forEach((e,i) => {
-              if (i !== 3 && i !== 4) {
-                if (
-                  Math.abs(e[0].mesh.position.x - element.modelMesh2.mesh.position.x) < 0.35 &&
-                  Math.abs(e[0].mesh.position.z - element.modelMesh2.mesh.position.z) < 0.35 &&
-                  !e[0].enter
-                ) {
-                  enterSpot(i);
-                } else if (
-                  Math.abs(e[0].mesh.position.x - element.modelMesh2.mesh.position.x) >= 0.35 &&
-                  Math.abs(e[0].mesh.position.z - element.modelMesh2.mesh.position.z) >= 0.35 &&
-                  e[0].enter
-                ) {
-                  comeOutSpot(i);
-                }
-              } else {
-                if (
-                  Math.abs(e[0].mesh.position.x - element.modelMesh2.mesh.position.x) < 2 &&
-                  Math.abs(e[0].mesh.position.z - element.modelMesh2.mesh.position.z) < 0.5 &&
-                  !e[0].enter
-                ) {
-                  enterSpot(i);
-                } else if (
-                  (Math.abs(e[0].mesh.position.x - element.modelMesh2.mesh.position.x) >= 2 ||
-                  Math.abs(e[0].mesh.position.z - element.modelMesh2.mesh.position.z) >= 0.5 )&&
-                  e[0].enter
-                ) {
-                  comeOutSpot(i);
-                }
-              }
-            })
         } else element.modelMesh2.actions[0].stop();
+        spotes.forEach((e,i) => {
+          if (i !== 3 && i !== 4) {
+            if (
+              Math.abs(e[0].mesh.position.x - element.modelMesh2.mesh.position.x) < 0.35 &&
+              Math.abs(e[0].mesh.position.z - element.modelMesh2.mesh.position.z) < 0.35 &&
+              !e[0].enter &&
+              !element.modelMesh2.moving
+            ) {
+              enterSpot(i);
+            } else if (
+              Math.abs(e[0].mesh.position.x - element.modelMesh2.mesh.position.x) >= 0.35 &&
+              Math.abs(e[0].mesh.position.z - element.modelMesh2.mesh.position.z) >= 0.35 &&
+              e[0].enter
+            ) {
+              comeOutSpot(i);
+            }
+          } else {
+            if (
+              Math.abs(e[0].mesh.position.x - element.modelMesh2.mesh.position.x) < 2 &&
+              Math.abs(e[0].mesh.position.z - element.modelMesh2.mesh.position.z) < 0.5 &&
+              !e[0].enter &&
+              !element.modelMesh2.moving
+            ) {
+              enterSpot(i);
+            } else if (
+              (Math.abs(e[0].mesh.position.x - element.modelMesh2.mesh.position.x) >= 2 ||
+              Math.abs(e[0].mesh.position.z - element.modelMesh2.mesh.position.z) >= 0.5 )&&
+              e[0].enter
+            ) {
+              comeOutSpot(i);
+            }
+          }
+        })
       }
       renderer.render(preset.scene, camera);
       camera.updateProjectionMatrix();
-      // window.requestAnimationFrame(draw);
       renderer.setAnimationLoop(draw);
     }
 
@@ -234,7 +234,7 @@ export default function threeCanvas() {
       } else if (i === 2) {
         if (sceneType === 2) {
           preset.scene.add(element.projectHome.mesh);
-          preset.scene.add(element.directMove);
+          preset.scene.add(element.directMove.mesh);
           element.projectList.forEach((i) => { preset.scene.add(i.mesh, i.font.mesh); })
           sceneType = 3;
           transitionMoving = true;
@@ -425,7 +425,7 @@ export default function threeCanvas() {
             element.projectSpot.mesh.position,
             {
               duration: 1,
-              x: 46,
+              x: 60.8,
             }
           )
         }

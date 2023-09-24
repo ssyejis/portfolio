@@ -37,14 +37,14 @@ export class Project {
       fontLoader: info.fontLoader,
       fontUrl: './font/DNF Bit Bit TTF_Regular.json',
       text: info.projectName,
-      color1: '#71443b',
-      color2: '#c4796a',
+      color1: 'black',
+      color2: '#172540',
       size: 0.4,
-      height: 0.2,
+      height: 0,
       addScene: false,
       rotationX: -Math.PI/10,
       positionX: this.positionX,
-      positionY: 5.5,
+      positionY: (this.mesh.num !== 5 && this.mesh.num !== 6)? 5.6 : 6.3,
       positionZ: this.positionZ+1,
     });
   }

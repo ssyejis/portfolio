@@ -24,6 +24,18 @@ export const i18n = {
     'messageVali': 'Please enter your message.',
     'send': 'send',
     'direction': 'Please use the mouse to move!',
+    'exit': `exit >>
+click
+the project`,
+    'portfolio': 'Portfolio Site',
+    'yeosu': 'YeosuOKReservation',
+    'changwon': 'ChangwonFacilities Reservation',
+    'singha': 'Singha Website',
+    'hanz': 'Hanceco Monitoring System',
+    'hydro': `Hydrogen Green Mobility
+Safety Monitoring`,
+    'hwaseong': `Hwaseong City Counseling 
+management system`,
   },
   ko: {
     'title' : '안녕하세요, 전진하는 개발자 서예지입니다.',
@@ -53,6 +65,18 @@ export const i18n = {
     'messageVali': '메세지를 작성해주세요.',
     'send': '보내기',
     'direction': '마우스를 이용해 이동해주세요!',
+    'exit': `exit >>
+프로젝트를
+클릭해주세요.`,
+    'portfolio': '포트폴리오 사이트',
+    'yeosu': '여수시OK통합예약홈페이지',
+    'changwon': '창원시설공단 통합 예약시스템',
+    'singha': '(주)싱하 자체 홈페이지',
+    'hanz': '한체코 모니터링 시스템',
+    'hydro': `수소그린 모빌리티
+통합안전 모니터링 시스템`,
+    'hwaseong': `화성시 통합상담소
+전산관리 시스템`,
   }
 }
 
