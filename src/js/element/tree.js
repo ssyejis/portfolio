@@ -31,8 +31,5 @@ export class Tree {
     this.conMesh = new Mesh(this.conGeometry, this.conMaterial);
     this.conMesh.position.set(0,1,0);
     this.barMesh.add(this.conMesh);
-    // this.scene.add(this.conMesh);
-
-    // this.mesh.name = info.name || '';
   }
 }

@@ -10,8 +10,6 @@ import {
 
 export class Box {
   constructor(info) {
-    // ColorManagement.enabled = true;
-    // ColorManagement.legacyMode = false;
     this.scene = info.scene;
 
     this.positionX = info.positionX || 0;

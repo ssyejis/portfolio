@@ -59,8 +59,21 @@ function checkForm(target) {
 
 function sendForm() {
   if (nameVali && emailVali && messageVali) {
-    form.action = 'https://script.google.com/macros/s/AKfycbx8hy8W5Bzh5uareHiGsyLToaHhB58lP90EIVkwn43bibfnC4NTTD1PHkX8cVBF0yLt/exec';
-    form.method = 'POST';
+    const postForm = new Promise((resolve, reject) => {
+      form.action = 'https://script.google.com/macros/s/AKfycbx8hy8W5Bzh5uareHiGsyLToaHhB58lP90EIVkwn43bibfnC4NTTD1PHkX8cVBF0yLt/exec';
+      form.method = 'POST';
+      setTimeout(()=> { resolve(form.action, form.method)},500 ); 
+    })
+    postForm.then(() => {
+      name.value = '';
+      email.value = '';
+      message.value = '';
+    })
+    const alter = document.querySelector('.alter-box');
+    alter.classList.remove('display--none');
+    setTimeout(()=> {
+      alter.classList.add('display--none');
+    },4000);
   }
   else {
     if (name.value === '') name.nextElementSibling.classList.remove('display--none');
@@ -71,9 +84,3 @@ function sendForm() {
     form.method = '';
   }
 }
-
-// function openKakao() {
-//   Kakao.Channel.addChannel({
-//     channelPublicId: '_ZeUTxl',
-//   });
-// }

@@ -28,7 +28,6 @@ export class Floor {
     this.geometry = new CircleGeometry(info.radius, info.segment);
     this.material = new MeshStandardMaterial({
       map: floorTexture,
-      // color: info.color,
     });
     this.mesh = new Mesh(this.geometry, this.material);
     this.mesh.receiveShadow = true;

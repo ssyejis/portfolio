@@ -66,7 +66,7 @@ export default function threeCanvas() {
       if (element.bird.mixer) element.bird.mixer.update(delta);
       
       if (element.modelMesh2.mesh) {
-        if(sceneType !== 1 && !element.projectSpot.enter) camera.lookAt(element.modelMesh2.mesh.position);
+        if(sceneType !== 1 && !spotes[2][0].enter) camera.lookAt(element.modelMesh2.mesh.position);
         if (isPressed) {
           raycasting();
         }
@@ -143,11 +143,11 @@ export default function threeCanvas() {
           zoom: 1.5,
         }
       )
-      if (spotes[i][1] && i !== 2) {
+      if (spotes[i][1]) {
         gsap.to(
           spotes[i][1],
           {
-            delay: (i === 1 || spotes[3][0].once) ? 0.3 : 2,
+            delay: (i === 1 || (i === 3 && spotes[3][0].once)) ? 0.3 : 2,
             duration: 0.4,
             css: { right: '10px', display: 'block' }
           }
@@ -236,8 +236,9 @@ export default function threeCanvas() {
           preset.scene.add(element.projectHome.mesh);
           preset.scene.add(element.directMove.mesh);
           preset.scene.add(element.exit.mesh);
+          preset.scene.add(element.moveSign.mesh);
           element.projectList.forEach((i) => { preset.scene.add(i.mesh, i.font.mesh); })
-          sceneType = 3;
+          
           transitionMoving = true;
           gsap.to(
             element.modelMesh2.mesh.position,
@@ -263,9 +264,9 @@ export default function threeCanvas() {
               y: 5.7,
             }
           )
-          setTimeout(() => { transitionMoving = false; },3000)
+          setTimeout(() => { transitionMoving = false; sceneType = 3; },3000)
         } else if (sceneType === 3) {
-          sceneType = 2;
+          
           transitionMoving = true;
           gsap.to(
             element.modelMesh2.mesh.position,
@@ -294,10 +295,10 @@ export default function threeCanvas() {
               x: -3
             }
           )
-          setTimeout(() => { transitionMoving = false; },4500)
+          setTimeout(() => { transitionMoving = false; sceneType = 2; },4500)
         }
       } else if (i === 3) {
-        if (spotes[4][0].enter) {
+        if (spotes[4][0].once) {
           spotes[3][0].once = true;
           gsap.to(
             element.post.mesh.children[3].position,
@@ -338,6 +339,8 @@ export default function threeCanvas() {
           },900);
         }
       } else if (i === 4) {
+        preset.scene.remove(element.trafficText.mesh);
+        spotes[4][0].once = true;
         for (let i = 0; i < element.crossWalkBoxes.length; i++) {
           gsap.to(
             element.crossWalkBoxes[i].mesh.position,
@@ -373,7 +376,7 @@ export default function threeCanvas() {
     }
 
     function comeOutSpot(i) {
-      if(i !== 4)spotes[i][0].enter = false;
+      spotes[i][0].enter = false;
       if (i !== 2) {
         gsap.to(
           camera.position,

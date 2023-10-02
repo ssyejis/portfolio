@@ -24,6 +24,7 @@ export const i18n = {
     'messageVali': 'Please enter your message.',
     'send': 'send',
     'direction': 'Please use the mouse to move!',
+    'submit': 'email has been sent.',
     'exit': `exit >>
 click
 the project`,
@@ -36,6 +37,8 @@ the project`,
 Safety Monitoring`,
     'hwaseong': `Hwaseong City Counseling 
 management system`,
+'trafficText': `Why don't we turn on the green light
+together and keep moving forward?`
   },
   ko: {
     'title' : '안녕하세요, 전진하는 개발자 서예지입니다.',
@@ -65,6 +68,7 @@ management system`,
     'messageVali': '메세지를 작성해주세요.',
     'send': '보내기',
     'direction': '마우스를 이용해 이동해주세요!',
+    'submit': '이메일이 전송되었습니다.',
     'exit': `exit >>
 프로젝트를
 클릭해주세요.`,
@@ -77,6 +81,7 @@ management system`,
 통합안전 모니터링 시스템`,
     'hwaseong': `화성시 통합상담소
 전산관리 시스템`,
+'trafficText': '함께 초록불을 키고 계속해서 전진하면 어떨까요?'
   }
 }
 
