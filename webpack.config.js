@@ -71,6 +71,7 @@ module.exports = {
 				{ from: "./src/font", to: "./font" },
 				{ from: "./src/components", to: "./components" },
 				{ from: "./src/js", to: "./js" },
+				{ from: "./src/favicon.ico", to: "./favicon.ico" },
 			],
 		})
 	]
