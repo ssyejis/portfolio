@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import gsap from 'gsap';
-import * as body from './bodyElement';
 import { preset, element, repeatElement } from './element/repeatElements';
 
 export default function threeCanvas() {

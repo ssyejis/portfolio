@@ -31,7 +31,7 @@ the project`,
     'portfolio': 'Portfolio Site',
     'yeosu': 'YeosuOKReservation',
     'changwon': 'ChangwonFacilities Reservation',
-    'singha': 'Singha Website',
+    'singhaHome': 'Singha Website',
     'hanz': 'Hanceco Monitoring System',
     'hydro': `Hydrogen Green Mobility
 Safety Monitoring`,
@@ -75,7 +75,7 @@ together and keep moving forward?`
     'portfolio': '포트폴리오 사이트',
     'yeosu': '여수시OK통합예약홈페이지',
     'changwon': '창원시설공단 통합 예약시스템',
-    'singha': '(주)싱하 자체 홈페이지',
+    'singhaHome': '(주)싱하 자체 홈페이지',
     'hanz': '한체코 모니터링 시스템',
     'hydro': `수소그린 모빌리티
 통합안전 모니터링 시스템`,

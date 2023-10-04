@@ -42,19 +42,19 @@ export default class SkillContent extends HTMLElement {
           <div class="skill-content__lang skill-lang">
             <span class="skill-lang__name bit">TS</span>
             <div class="skill-lang__bar">
-              <div style="width: 70%"></div>
+              <div style="width: 45%"></div>
             </div>
           </div>
           <div class="skill-content__lang skill-lang">
             <span class="skill-lang__name bit">VUE</span>
             <div class="skill-lang__bar">
-              <div style="width: 70%"></div>
+              <div style="width: 65%"></div>
             </div>
           </div>
           <div class="skill-content__lang skill-lang">
             <span class="skill-lang__name bit">PHOTOSHOP</span>
             <div class="skill-lang__bar">
-              <div style="width: 60%"></div>
+              <div style="width: 50%"></div>
             </div>
           </div>
           <div class="skill-content__lang skill-lang">
@@ -66,7 +66,6 @@ export default class SkillContent extends HTMLElement {
           <div class="skill-study">
             <h2 class="bit font-white">studying</h2>
             <div class="skill-study__list">
-              <caption><img src="./images/lang-node.png" alt="node-img"></caption>
               <caption><img src="./images/lang-api.png" alt="node-img"></caption>
               <caption><img src="./images/lang-webpack.png" alt="node-img"></caption>
             </div>
